@@ -6,4 +6,13 @@
 }
 
 <h2>@Model.Name</h2>
+<h2>@Model.MembershipType.Name</h2>
+@{
+    if (Model.Birthday != null)
+    {
+        string birthday = Model.Birthday.Value.ToString("dd-MM-yyyy");
+        <h2>@birthday</h2>
+    }
+}
+
 
