@@ -56,7 +56,7 @@ namespace Vidly2.Controllers.Api
 
         // PUT /api/customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, CustomerDTO customerDTO)
+        public IHttpActionResult UpdateCustomer(int id, CustomerDTO customerDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -73,11 +73,13 @@ namespace Vidly2.Controllers.Api
 
             _context.SaveChanges();
 
+            return Ok();
+
         }
 
         // DELETE /api/customer/1
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customerInDb == null)
@@ -85,6 +87,8 @@ namespace Vidly2.Controllers.Api
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
+
+            return Ok();
         }
         
     }
