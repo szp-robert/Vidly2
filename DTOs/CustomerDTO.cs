@@ -20,7 +20,9 @@ namespace Vidly2.DTOs
 
         
         public byte MembershipTypeId { get; set; }
-        
+
+        public MembershipTypeDTO MembershipType { get; set; }
+
         //[Min18YearsIfMember] usuniete z uwagi na fakt ze implementacja tego parametry używa Customer a nie CustomerDTO
         public DateTime? Birthday { get; set; }
     }
