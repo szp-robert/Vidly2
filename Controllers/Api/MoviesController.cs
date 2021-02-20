@@ -44,6 +44,7 @@ namespace Vidly2.Controllers.Api
         }
 
         // POST /api/movies
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [HttpPost] //because im creating a resource można tego nie dawać i w nazwie akcji dać PostCustomer, ale nie zalecane przez Mosha
         public IHttpActionResult CreateMovie(MovieDTO movieDTO)
         {
@@ -62,6 +63,7 @@ namespace Vidly2.Controllers.Api
         }
 
         // PUT /api/movies/1
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [HttpPut]
         public IHttpActionResult UpdateMovie(int id, MovieDTO movieDTO)
         {
@@ -85,6 +87,7 @@ namespace Vidly2.Controllers.Api
         }
 
         // DELETE /api/movie/1
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [HttpDelete]
         public IHttpActionResult DeleteMovie(int id)
         {

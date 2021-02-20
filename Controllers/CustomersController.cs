@@ -9,6 +9,7 @@ using Vidly2.ViewModels;
 
 namespace Vidly2.Controllers
 {
+    
     public class CustomersController : Controller
     {
         private ApplicationDbContext _context;
@@ -62,7 +63,7 @@ namespace Vidly2.Controllers
             };
             return View("CustomerForm",viewModel);
         }
-
+        
         public ViewResult Index()
         {            
             return View();
